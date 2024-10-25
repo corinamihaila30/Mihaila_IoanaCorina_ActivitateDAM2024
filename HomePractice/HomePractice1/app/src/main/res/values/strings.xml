@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">HomePractice1</string>
+    <string name="hello">Hello, Corina</string>
+    <string name="createProfile">Create profile</string>
+    <string name="sendProfile">Send profile</string>
+    <string-array name="arrayString">
+        <item>F</item>
+        <item>M</item>
+        <item>N</item>
+    </string-array>
+</resources>

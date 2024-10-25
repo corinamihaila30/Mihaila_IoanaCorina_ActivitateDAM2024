@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="@color/pink2"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    tools:context=".MainActivity2">
+
+    <EditText
+        android:id="@+id/denumire"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:ems="10"
+        android:textColor="@color/black"
+        android:fontFamily="@font/life_savers_bold"
+        android:hint="Denumire cladire"
+        android:inputType="text"
+        android:text="Name" />
+
+    <EditText
+        android:id="@+id/tipCamera"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:ems="10"
+        android:fontFamily="@font/life_savers_bold"
+        android:inputType="text"
+        android:text="Name" />
+
+    <EditText
+        android:id="@+id/nrCamera"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:ems="10"
+        android:fontFamily="@font/life_savers_bold"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/pretCamera"
+        android:layout_width="match_parent"
+        android:layout_height="69dp"
+        android:ems="10"
+        android:fontFamily="@font/life_savers_bold"
+        android:inputType="number" />
+
+    <CheckBox
+        android:id="@+id/Ocupata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/life_savers_bold"
+        android:text="CheckBox" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Creare camera"
+        />
+</LinearLayout>
