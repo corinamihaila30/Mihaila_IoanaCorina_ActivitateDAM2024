@@ -1,6 +1,9 @@
 package com.example.seminar4.myclasses;
 
-public class Camera {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Camera implements Parcelable {
     private String denumireCladire;
     private String tipCamera;
     private Integer nrCamera;
@@ -14,6 +17,59 @@ public class Camera {
         this.pretCamera = pretCamera;
         this.tipCamera = tipCamera;
     }
+
+    protected Camera(Parcel in) {
+        denumireCladire = in.readString();
+        tipCamera = in.readString();
+        if (in.readByte() == 0) {
+            nrCamera = null;
+        } else {
+            nrCamera = in.readInt();
+        }
+        if (in.readByte() == 0) {
+            pretCamera = null;
+        } else {
+            pretCamera = in.readInt();
+        }
+        byte tmpOcupat = in.readByte();
+        ocupat = tmpOcupat == 0 ? null : tmpOcupat == 1;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(denumireCladire);
+        dest.writeString(tipCamera);
+        if (nrCamera == null) {
+            dest.writeByte((byte) 0);
+        } else {
+            dest.writeByte((byte) 1);
+            dest.writeInt(nrCamera);
+        }
+        if (pretCamera == null) {
+            dest.writeByte((byte) 0);
+        } else {
+            dest.writeByte((byte) 1);
+            dest.writeInt(pretCamera);
+        }
+        dest.writeByte((byte) (ocupat == null ? 0 : ocupat ? 1 : 2));
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<Camera> CREATOR = new Creator<Camera>() {
+        @Override
+        public Camera createFromParcel(Parcel in) {
+            return new Camera(in);
+        }
+
+        @Override
+        public Camera[] newArray(int size) {
+            return new Camera[size];
+        }
+    };
 
     @Override
     public String toString() {

@@ -1,5 +1,6 @@
 package com.example.seminar4;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -43,6 +44,12 @@ public class MainActivity2 extends AppCompatActivity {
                 CheckBox check = findViewById(R.id.Ocupata);
                 Boolean ocupat = check.isChecked();
                 Camera c=new Camera(denumireS,ocupat,nrInt,pretInt,tipS);
+
+                Intent it=new Intent();
+                it.putExtra("rezervare",c);
+                startActivityForResult(it,103);
+                setResult(RESULT_OK,it);
+                finish();
                 Toast.makeText(getApplicationContext(),c.toString(),Toast.LENGTH_LONG).show();
             }
         });
