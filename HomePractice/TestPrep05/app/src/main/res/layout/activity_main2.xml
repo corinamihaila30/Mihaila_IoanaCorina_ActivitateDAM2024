@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2">
+
+    <EditText
+        android:id="@+id/Act2Model"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="model" />
+
+    <EditText
+        android:id="@+id/Act2stoc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="stoc"
+        android:inputType="number" />
+
+    <Spinner
+        android:id="@+id/Act2categorie"
+        android:layout_width="match_parent"
+        android:entries="@array/spinnerItems"
+        android:layout_height="wrap_content" />
+
+    <DatePicker
+        android:id="@+id/Act2date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </DatePicker>
+
+    <Button
+        android:id="@+id/Act2btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="adauga produs" />
+</LinearLayout>

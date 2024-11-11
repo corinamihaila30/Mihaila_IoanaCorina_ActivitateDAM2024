@@ -16,11 +16,15 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.seminar4.myclasses.Camera;
+import com.example.seminar4.myclasses.CameraAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ListaCamereRezervate extends AppCompatActivity {
+    private List<Camera> lisCamere = null;
+    private int idModificat=0;
+    private CameraAdapter adapter=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +41,9 @@ public class ListaCamereRezervate extends AppCompatActivity {
         List<Camera> camereAniv= it.getParcelableArrayListExtra("camere");
 
         ListView lw=findViewById(R.id.LWcamere);
-        ArrayAdapter<Camera> adapter=new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1,camereAniv);
+        //ArrayAdapter<Camera> adapter=new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1,camereAniv);
+        //lw.setAdapter(adapter);
+        adapter=new CameraAdapter(camereAniv,getApplicationContext(),R.layout.list_view_custom);
         lw.setAdapter(adapter);
 
         lw.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -49,9 +55,15 @@ public class ListaCamereRezervate extends AppCompatActivity {
         lw.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                camereAniv.remove(i);
-                adapter.notifyDataSetChanged();
+                //camereAniv.remove(i);
+                //adapter.notifyDataSetChanged();
+                Intent intentModif=new Intent(getApplicationContext(),MainActivity.class);
+                intentModif.putExtra("camera",camereAniv.get(i));
+                idModificat=1;
+                startActivityForResult(intentModif,403);
+                Toast.makeText(getApplicationContext(),camereAniv.get(i).toString(),Toast.LENGTH_LONG).show();
                 return false;
+
             }
         });
 

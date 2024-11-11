@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity3">
+
+    <EditText
+        android:id="@+id/Act3Denumire"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="denumire"/>
+
+    <EditText
+        android:id="@+id/Act3Pret"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="pret"
+        android:inputType="number" />
+
+    <CheckBox
+        android:id="@+id/Act3Cofeina"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="cofeina" />
+
+    <Button
+        android:id="@+id/Act3Buton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Adauga cafeaua" />
+</LinearLayout>

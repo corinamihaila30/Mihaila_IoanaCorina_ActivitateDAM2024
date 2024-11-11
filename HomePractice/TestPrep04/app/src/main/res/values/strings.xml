@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TestPrep04</string>
+    <string-array name="categorii">
+        <item>Programare</item>
+        <item>Psihologie</item>
+        <item>Dezvoltare personala</item>
+    </string-array>
+</resources>

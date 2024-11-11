@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TestPrep05</string>
+    <string-array name="spinnerItems">
+        <item>telefon</item>
+        <item>laptop</item>
+        <item>casti</item>
+    </string-array>
+</resources>

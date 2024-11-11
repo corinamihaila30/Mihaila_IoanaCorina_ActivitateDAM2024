@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TestPrep02</string>
+    <string-array name="spinneritems">
+        <item>basic</item>
+        <item>premium</item>
+    </string-array>
+</resources>

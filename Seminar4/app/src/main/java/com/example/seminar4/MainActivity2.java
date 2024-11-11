@@ -37,17 +37,17 @@ public class MainActivity2 extends AppCompatActivity {
                 EditText pret=findViewById(R.id.pretCamera);
                 EditText nr=findViewById(R.id.nrCamera);
                 EditText tip= findViewById(R.id.tipCamera);
+                CheckBox check = findViewById(R.id.Ocupata);
+
                 String denumireS = den.getText().toString();
                 String tipS = tip.getText().toString();
                 Integer pretInt = Integer.parseInt(pret.getText().toString());
                 Integer nrInt = Integer.parseInt(nr.getText().toString());
-                CheckBox check = findViewById(R.id.Ocupata);
                 Boolean ocupat = check.isChecked();
                 Camera c=new Camera(denumireS,ocupat,nrInt,pretInt,tipS);
 
                 Intent it=new Intent();
-                it.putExtra("rezervare",c);
-                startActivityForResult(it,103);
+                it.putExtra("rezervare", c);
                 setResult(RESULT_OK,it);
                 finish();
                 Toast.makeText(getApplicationContext(),c.toString(),Toast.LENGTH_LONG).show();
