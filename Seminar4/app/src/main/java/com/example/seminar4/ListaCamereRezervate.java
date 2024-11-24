@@ -41,9 +41,9 @@ public class ListaCamereRezervate extends AppCompatActivity {
         List<Camera> camereAniv= it.getParcelableArrayListExtra("camere");
 
         ListView lw=findViewById(R.id.LWcamere);
-        //ArrayAdapter<Camera> adapter=new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1,camereAniv);
+        ArrayAdapter<Camera> adapter=new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1,camereAniv);
         //lw.setAdapter(adapter);
-        adapter=new CameraAdapter(camereAniv,getApplicationContext(),R.layout.list_view_custom);
+        //adapter=new CameraAdapter(camereAniv,getApplicationContext(),R.layout.list_view_custom);
         lw.setAdapter(adapter);
 
         lw.setOnItemClickListener(new AdapterView.OnItemClickListener() {

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TestPrep06</string>
+    <string-array name="spinneritems">
+        <item>adult</item>
+        <item>student/elev</item>
+        <item>pensionar</item>
+    </string-array>
+</resources>
