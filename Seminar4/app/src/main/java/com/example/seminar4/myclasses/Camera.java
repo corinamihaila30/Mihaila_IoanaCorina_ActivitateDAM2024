@@ -3,22 +3,30 @@ package com.example.seminar4.myclasses;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+import org.jetbrains.annotations.NotNull;
+
+@Entity(tableName = "TabelCamere")
 public class Camera implements Parcelable {
     private String denumireCladire;
     private String tipCamera;
+    @PrimaryKey(autoGenerate = true)
+    @NotNull
     private Integer nrCamera;
     private Integer pretCamera;
     private Boolean ocupat;
 
-    public Camera(String denumireCladire, Boolean nrClient, Integer nrCamera, Integer pretCamera, String tipCamera) {
+    public Camera(String denumireCladire, String tipCamera, @NotNull Integer nrCamera, Integer pretCamera, Boolean ocupat) {
         this.denumireCladire = denumireCladire;
-        this.ocupat = nrClient;
+        this.tipCamera = tipCamera;
         this.nrCamera = nrCamera;
         this.pretCamera = pretCamera;
-        this.tipCamera = tipCamera;
+        this.ocupat = ocupat;
     }
 
-    protected Camera(Parcel in) {
+    public Camera(Parcel in) {
         denumireCladire = in.readString();
         tipCamera = in.readString();
         if (in.readByte() == 0) {

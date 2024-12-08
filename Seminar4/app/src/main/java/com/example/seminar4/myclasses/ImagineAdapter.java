@@ -18,6 +18,12 @@ public class ImagineAdapter extends BaseAdapter {
     ArrayList<ImaginiDomeniu> listaImag;
     Integer idTemplate;
 
+    public ImagineAdapter(Context ctx, ArrayList<ImaginiDomeniu> listaImag, Integer idTemplate) {
+        this.ctx = ctx;
+        this.listaImag = listaImag;
+        this.idTemplate = idTemplate;
+    }
+
     @Override
     public int getCount() {
         return listaImag.size();

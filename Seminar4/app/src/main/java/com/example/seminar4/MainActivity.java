@@ -2,6 +2,8 @@ package com.example.seminar4;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
@@ -12,14 +14,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.room.Database;
 
 import com.example.seminar4.myclasses.Camera;
+import com.example.seminar4.myclasses.CameraDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity {
 
+    CameraDatabase database=null;
     private List<Camera> listac=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +70,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+//        Executor executor= Executors.newSingleThreadExecutor();
+//        Handler handler=new Handler(Looper.myLooper());
+//        executor.execute(new Runnable() {
+//            @Override
+//            public void run() {
+//                database.getDatabase();
+//
+//            }
+//        });
+
     }
 
     @Override
@@ -77,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
             if(resultCode==RESULT_OK){
                 Camera camera=data.getParcelableExtra("rezervare");
                 listac.add(camera);
+
             }
         }
     }

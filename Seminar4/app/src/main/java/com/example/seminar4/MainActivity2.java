@@ -44,7 +44,7 @@ public class MainActivity2 extends AppCompatActivity {
                 Integer pretInt = Integer.parseInt(pret.getText().toString());
                 Integer nrInt = Integer.parseInt(nr.getText().toString());
                 Boolean ocupat = check.isChecked();
-                Camera c=new Camera(denumireS,ocupat,nrInt,pretInt,tipS);
+                Camera c=new Camera(denumireS,tipS,nrInt,pretInt,ocupat);
 
                 Intent it=new Intent();
                 it.putExtra("rezervare", c);

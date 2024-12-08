@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.seminar4"
+    namespace = "com.example.homepractice2"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.seminar4"
+        applicationId = "com.example.homepractice2"
         minSdk = 23
         targetSdk = 34
         versionCode = 1
@@ -32,8 +32,6 @@ android {
 }
 
 dependencies {
-    annotationProcessor("androidx.room:room-compiler:2.6.1")
-    implementation("androidx.room:room-runtime:2.6.1")
 
     implementation(libs.appcompat)
     implementation(libs.material)
