@@ -1,6 +1,7 @@
 package com.example.seminar4;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -60,10 +61,12 @@ public class ListaCamereRezervate extends AppCompatActivity {
                 Intent intentModif=new Intent(getApplicationContext(),MainActivity.class);
                 intentModif.putExtra("camera",camereAniv.get(i));
                 idModificat=1;
-                startActivityForResult(intentModif,403);
-                Toast.makeText(getApplicationContext(),camereAniv.get(i).toString(),Toast.LENGTH_LONG).show();
+                //Toast.makeText(getApplicationContext(),camereAniv.get(i).toString(),Toast.LENGTH_LONG).show();
+                SharedPreferences sp=getSharedPreferences("obiecteCamere",MODE_PRIVATE);
+                SharedPreferences.Editor editor=sp.edit();
+                editor.putString(camereAniv.get(i).getKey(),camereAniv.get(i).toString());
+                editor.commit();
                 return false;
-
             }
         });
 

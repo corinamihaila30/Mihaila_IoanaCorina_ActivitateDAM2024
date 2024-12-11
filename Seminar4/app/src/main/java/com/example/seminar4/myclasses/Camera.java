@@ -79,6 +79,17 @@ public class Camera implements Parcelable {
         }
     };
 
+    public String getKey(){
+        StringBuilder sb=new StringBuilder();
+        sb.append(this.denumireCladire);
+        sb.append(this.nrCamera);
+        sb.append(this.tipCamera);
+        sb.append(this.pretCamera);
+        sb.append(this.ocupat);
+        return sb.toString();
+    }
+
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Camera{");

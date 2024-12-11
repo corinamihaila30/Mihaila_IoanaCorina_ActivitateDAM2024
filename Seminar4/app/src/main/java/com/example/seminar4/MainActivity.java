@@ -18,6 +18,7 @@ import androidx.room.Database;
 
 import com.example.seminar4.myclasses.Camera;
 import com.example.seminar4.myclasses.CameraDatabase;
+import com.example.seminar4.myclasses.MainActivity3;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -79,6 +80,16 @@ public class MainActivity extends AppCompatActivity {
 //
 //            }
 //        });
+
+
+        Button btn5 = findViewById(R.id.mainBtn5);
+        btn5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(), MainActivity3.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
